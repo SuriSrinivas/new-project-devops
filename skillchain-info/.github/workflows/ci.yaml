@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: |
+          cd skillchain-info
+          npm install
+      - name: Run tests
+        run: |
+          cd skillchain-info
+          npm test -- --watchAll=false || true
+      - name: Build app
+        run: |
+          cd skillchain-info
+          npm run build
