@@ -20,7 +20,7 @@ function Footer() {
               variant="h4"
               fontWeight={900}
               sx={{
-                background: 'linear-gradient(90deg, #00bcd4, #1976d2)',
+                background: 'linear-gradient(90deg, #728789ff, #1976d2)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 display: 'inline-block',
